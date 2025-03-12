@@ -1,0 +1,204 @@
+/* Modern Navigation Enhancements for Cylestio Docs */
+
+/* Enhance sidebar container */
+.md-sidebar {
+  background: linear-gradient(180deg, rgba(250, 251, 255, 0.9) 0%, rgba(246, 247, 255, 0.9) 100%);
+  border-right: 1px solid rgba(230, 230, 245, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar {
+  background: linear-gradient(180deg, rgba(35, 37, 54, 0.9) 0%, rgba(26, 28, 45, 0.9) 100%);
+  border-right: 1px solid rgba(70, 70, 85, 0.3);
+}
+
+/* Main navigation container */
+.md-nav {
+  font-size: 0.75rem;
+  transition: all 0.25s ease;
+  padding: 0 0.6rem;
+}
+
+/* Top level navigation items */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  padding: 0.7em 0.8em;
+  border-radius: 8px;
+  margin: 0.5em 0;
+  transition: all 0.2s ease;
+  position: relative;
+  letter-spacing: -0.01em;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(240, 240, 250, 0.7);
+}
+
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  background-color: rgba(55, 57, 74, 0.4);
+  border: 1px solid rgba(70, 70, 90, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Second level and below navigation */
+.md-nav__item .md-nav {
+  margin-left: 0.6em;
+  padding-left: 0.8em;
+  border-left: 2px solid rgba(100, 100, 100, 0.08);
+  margin-bottom: 1em;
+}
+
+/* All navigation links */
+.md-nav__link {
+  padding: 0.5em 0.75em;
+  margin: 0.2em 0;
+  color: #555;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* Hover states */
+.md-nav__link:hover {
+  background-color: rgba(64, 81, 181, 0.06) !important;
+  color: var(--md-primary-fg-color);
+  transform: translateX(2px);
+}
+
+/* Active link styling */
+.md-nav__link--active {
+  color: var(--md-primary-fg-color) !important;
+  font-weight: 500;
+  background-color: rgba(64, 81, 181, 0.08) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+/* Add subtle icon for nested items */
+.md-nav__item--nested > .md-nav__link {
+  position: relative;
+  padding-left: 1.2em;
+}
+
+.md-nav__item--nested > .md-nav__link::before {
+  content: "";
+  position: absolute;
+  left: 0.4em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.45em;
+  height: 0.45em;
+  background-color: currentColor;
+  mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42Z"/></svg>');
+  -webkit-mask-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42Z"/></svg>');
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  opacity: 0.6;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Rotate arrow when expanded */
+.md-nav__toggle:checked ~ .md-nav__link::before {
+  transform: translateY(-50%) rotate(90deg);
+  opacity: 0.9;
+}
+
+/* Navigation item titles */
+.md-nav__title {
+  padding: 1.2em 0.5em 0.4em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+/* Add subtle indicators for active items */
+.md-nav__link--active::after {
+  content: "";
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.35em;
+  height: 0.35em;
+  border-radius: 50%;
+  background-color: var(--md-primary-fg-color);
+  opacity: 0.8;
+}
+
+/* Enhanced dark mode support */
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+[data-md-color-scheme="slate"] .md-nav__title {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+[data-md-color-scheme="slate"] .md-nav__item .md-nav {
+  border-left-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .md-nav__link:hover {
+  background-color: rgba(100, 120, 255, 0.1) !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+  background-color: rgba(100, 120, 255, 0.15) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* Better visual separation between sections */
+.md-nav__item {
+  margin-bottom: 0.2em;
+}
+
+/* More pronounced top-level items */
+.md-nav--primary > .md-nav__list > .md-nav__item {
+  margin-bottom: 0.5em;
+}
+
+/* Custom sidebar header */
+.md-sidebar__scrollwrap {
+  padding-top: 0.5rem;
+}
+
+/* Smoother transitions when expanding/collapsing */
+.md-nav__toggle:checked ~ .md-nav {
+  animation: nav-expand 0.25s ease-out;
+}
+
+@keyframes nav-expand {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fix for hover on mobile devices */
+@media (max-width: 960px) {
+  .md-nav__link:hover {
+    transform: none;
+  }
+  
+  .md-sidebar {
+    background: linear-gradient(180deg, rgba(250, 251, 255, 0.98) 0%, rgba(246, 247, 255, 0.98) 100%);
+  }
+  
+  [data-md-color-scheme="slate"] .md-sidebar {
+    background: linear-gradient(180deg, rgba(35, 37, 54, 0.98) 0%, rgba(26, 28, 45, 0.98) 100%);
+  }
+} 

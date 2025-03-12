@@ -1,0 +1,153 @@
+/* Custom color palette for Cylestio Documentation */
+
+:root {
+  /* Primary color - indigo */
+  --md-primary-fg-color: #3F51B5;
+  --md-primary-fg-color--light: #5C6BC0;
+  --md-primary-fg-color--dark: #303F9F;
+  
+  /* Accent color */
+  --md-accent-fg-color: #536DFE;
+  --md-accent-fg-color--transparent: rgba(83, 109, 254, 0.1);
+  
+  /* Text colors on primary and accent backgrounds */
+  --md-primary-bg-color: #fff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
+  --md-accent-bg-color: #fff;
+  
+  /* Custom colors for Cylestio */
+  --cylestio-blue: #3F51B5;
+  --cylestio-blue-light: #5C6BC0;
+  --cylestio-blue-dark: #303F9F;
+  --cylestio-accent: #536DFE;
+  --cylestio-accent-light: #8C9EFF;
+  --cylestio-accent-dark: #3D5AFE;
+  
+  /* Neutral colors */
+  --cylestio-gray-50: #FAFAFA;
+  --cylestio-gray-100: #F5F5F5;
+  --cylestio-gray-200: #EEEEEE;
+  --cylestio-gray-300: #E0E0E0;
+  --cylestio-gray-400: #BDBDBD;
+  --cylestio-gray-500: #9E9E9E;
+  --cylestio-gray-600: #757575;
+  --cylestio-gray-700: #616161;
+  --cylestio-gray-800: #424242;
+  --cylestio-gray-900: #212121;
+}
+
+/* Dark mode colors */
+[data-md-color-scheme="slate"] {
+  /* Primary color - darker indigo for dark mode */
+  --md-primary-fg-color: #3949AB;
+  --md-primary-fg-color--light: #5C6BC0;
+  --md-primary-fg-color--dark: #283593;
+  
+  /* Accent color - brighter in dark mode */
+  --md-accent-fg-color: #738FFE;
+  --md-accent-fg-color--transparent: rgba(115, 143, 254, 0.1);
+  
+  /* Text colors on primary and accent backgrounds */
+  --md-primary-bg-color: #fff;
+  --md-primary-bg-color--light: rgba(255, 255, 255, 0.7);
+  --md-accent-bg-color: #fff;
+  
+  /* Background colors */
+  --md-default-bg-color: #1E1E2E;
+  --md-default-bg-color--light: #252536;
+  
+  /* Custom colors for Cylestio in dark mode */
+  --cylestio-blue: #3949AB;
+  --cylestio-blue-light: #5C6BC0;
+  --cylestio-blue-dark: #283593;
+  --cylestio-accent: #738FFE;
+  --cylestio-accent-light: #8C9EFF;
+  --cylestio-accent-dark: #5C7CFA;
+  
+  /* Neutral colors - darker in dark mode */
+  --cylestio-gray-50: #2A2A3C;
+  --cylestio-gray-100: #252536;
+  --cylestio-gray-200: #1E1E2E;
+  --cylestio-gray-300: #1A1A27;
+  --cylestio-gray-400: #16161E;
+  --cylestio-gray-500: #BDBDBD;
+  --cylestio-gray-600: #CCCCCC;
+  --cylestio-gray-700: #DDDDDD;
+  --cylestio-gray-800: #EEEEEE;
+  --cylestio-gray-900: #FFFFFF;
+}
+
+/* Apply custom colors to specific elements */
+
+/* Links */
+.md-typeset a {
+  color: var(--cylestio-blue);
+}
+
+.md-typeset a:hover {
+  color: var(--cylestio-accent);
+}
+
+/* Buttons */
+.md-button {
+  background-color: var(--cylestio-gray-100);
+  color: var(--cylestio-blue);
+  border-color: var(--cylestio-gray-300);
+}
+
+.md-button:hover {
+  background-color: var(--cylestio-gray-200);
+  color: var(--cylestio-blue-dark);
+  border-color: var(--cylestio-gray-400);
+}
+
+.md-button--primary {
+  background-color: var(--cylestio-blue);
+  color: white;
+  border-color: var(--cylestio-blue-dark);
+}
+
+.md-button--primary:hover {
+  background-color: var(--cylestio-blue-dark);
+  color: white;
+  border-color: var(--cylestio-blue-dark);
+}
+
+/* Navigation active items */
+.md-nav__link--active {
+  color: var(--cylestio-blue) !important;
+}
+
+/* Tabs */
+.md-tabs {
+  background-color: var(--cylestio-blue);
+}
+
+/* Code blocks */
+.md-typeset code {
+  background-color: var(--cylestio-gray-100);
+}
+
+[data-md-color-scheme="slate"] .md-typeset code {
+  background-color: var(--cylestio-gray-50);
+}
+
+/* Admonitions */
+.md-typeset .admonition {
+  border-left-color: var(--cylestio-blue);
+}
+
+.md-typeset .admonition-title {
+  background-color: rgba(63, 81, 181, 0.1);
+}
+
+/* Tables */
+.md-typeset table th {
+  background-color: var(--cylestio-gray-100);
+  color: var(--cylestio-blue-dark);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table th {
+  background-color: var(--cylestio-gray-50);
+  color: var(--cylestio-blue-light);
+} 

@@ -1,0 +1,209 @@
+site_name: Cylestio Documentation
+site_description: Open-Source Monitoring for AI Agents
+site_url: https://docs.cylestio.com
+repo_url: https://github.com/cylestio
+repo_name: cylestio
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/cylestio_logo.svg
+  favicon: assets/cylestio_logo.svg
+  icon:
+    repo: fontawesome/brands/github
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+  font:
+    text: Roboto
+    code: Roboto Mono
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.indexes
+    - navigation.expand
+    - navigation.sections
+    - navigation.path
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotation
+    - content.tabs.link
+    - header.autohide
+    - toc.follow
+    - content.action.edit
+    - content.action.view
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+      title: On this page
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search
+  - glightbox
+  # - social:
+  #     cards_dir: assets/social
+  - tags
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
+      enable_git_follow: false
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - getting-started/index.md
+    - Quick Start: getting-started/quick-start.md
+    - Installation: getting-started/installation.md
+    - Configuration: getting-started/configuration.md
+  - User Guide:
+    - user-guide/index.md
+    - Monitoring: user-guide/monitoring.md
+    - Alerts: user-guide/alerts.md
+    - Dashboards: user-guide/dashboards.md
+  - API Reference:
+    - api-reference/index.md
+    - Authentication: api-reference/authentication.md
+    - Endpoints: api-reference/endpoints.md
+  - SDK Reference:
+    - sdk-reference/index.md
+    - Python: sdk-reference/python.md
+    - JavaScript: sdk-reference/javascript.md
+    - Go: sdk-reference/go.md
+    - Java: sdk-reference/java.md
+  - Security & Compliance:
+    - security/index.md
+    - Best Practices: security/best-practices.md
+    - Compliance: security/compliance.md
+  - Advanced Topics:
+    - advanced-topics/index.md
+    - Custom Integrations: advanced-topics/custom-integrations.md
+    - Scaling: advanced-topics/scaling.md
+    - Advanced Configuration: advanced-topics/advanced-configuration.md
+  - Troubleshooting:
+    - troubleshooting/index.md
+    - Common Issues: troubleshooting/common-issues.md
+    - FAQ: troubleshooting/faq.md
+
+extra_css:
+  - stylesheets/custom-colors.css
+  - stylesheets/extra.css
+  - stylesheets/enhanced-nav.css
+  - stylesheets/monitoring.css
+  - stylesheets/icon-fixes.css
+  - stylesheets/typography.css
+  - stylesheets/layout-fixes.css
+  - stylesheets/sdk-styles.css
+  - stylesheets/footer.css
+  - stylesheets/site-enhancements.css
+  - stylesheets/design-improvements.css
+
+# Add JavaScript for enhanced navigation
+extra_javascript:
+  - javascripts/nav-collapse.js
+  - javascripts/monitoring-enhancements.js
+  - javascripts/sdk-enhancements.js
+  - javascripts/site-enhancements.js
+  - javascripts/extra.js
+
+# Proper 404 page configuration
+extra:
+  404:
+    enabled: true
+    path: 404.md
+
+# Remove the announcement bar
+# extra:
+#   social:
+#     - icon: fontawesome/brands/github
+#       link: https://github.com/cylestio/cylestio
+#     - icon: fontawesome/brands/twitter
+#       link: https://twitter.com/cylestio 
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cylestio/cylestio
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/cylestio
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_KEY
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+  generator: false 

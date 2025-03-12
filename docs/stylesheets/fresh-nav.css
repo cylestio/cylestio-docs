@@ -1,0 +1,128 @@
+/* Clean, Simple Navigation for Cylestio Docs */
+
+/* Reset unnecessary styling */
+.md-nav {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Remove animations causing flickering */
+.md-nav__link, 
+.md-nav__item, 
+.md-nav__list,
+.md-nav__title,
+.md-sidebar {
+  transition: none !important;
+  animation: none !important;
+}
+
+/* Fix sidebar position and appearance */
+.md-sidebar--primary {
+  position: fixed;
+  width: 250px;
+  background-color: #f8f9fa;
+  border-right: 1px solid rgba(0, 0, 0, 0.07);
+  overflow-y: auto;
+  height: 100%;
+  padding-top: 48px;
+  top: 0;
+  z-index: 2;
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary {
+  background-color: #1e1e2e;
+  border-right-color: rgba(255, 255, 255, 0.07);
+}
+
+/* Hide unnecessary elements */
+.md-nav__title {
+  display: none;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child {
+  display: none;
+}
+
+.md-nav__item--nested .md-nav__toggle {
+  display: none;
+}
+
+/* Basic link styling */
+.md-nav__link {
+  color: #333;
+  display: block;
+  margin: 0;
+  padding: 8px 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: #e0e0e0;
+}
+
+/* Top level navigation items */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-weight: 600;
+  padding: 12px 20px;
+}
+
+/* Active link highlighting */
+.md-nav__link--active {
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+}
+
+/* Simple nested navigation */
+.md-nav--primary .md-nav__item--nested .md-nav {
+  padding-left: 12px;
+  display: none;
+}
+
+.md-nav--primary .md-nav__item--nested .md-nav__link--active + .md-nav,
+.md-nav--primary .md-nav__item--nested .md-nav__item--active > .md-nav {
+  display: block;
+}
+
+/* Section dividers */
+.md-nav--primary > .md-nav__list > .md-nav__item {
+  margin-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05); 
+  padding-top: 5px;
+}
+
+[data-md-color-scheme="slate"] .md-nav--primary > .md-nav__list > .md-nav__item {
+  border-top-color: rgba(255, 255, 255, 0.05);
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child {
+  border-top: none;
+}
+
+/* Adjust content margin */
+.md-main__inner {
+  margin-top: 0;
+}
+
+.md-content {
+  margin-left: 250px;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 76.1875em) {
+  .md-sidebar--primary {
+    width: 240px;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out !important;
+  }
+  
+  .md-sidebar--primary.md-sidebar--open {
+    transform: translateX(0);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .md-content {
+    margin-left: 0;
+  }
+} 

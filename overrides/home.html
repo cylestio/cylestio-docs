@@ -1,0 +1,302 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+<section class="tx-container">
+  <div class="md-grid md-typeset">
+    <div class="tx-hero">
+      <div class="tx-hero__content">
+        <h1>Cylestio Documentation</h1>
+        <p>Open-Source Monitoring for AI Agents</p>
+        <a href="{{ 'getting-started/quick-start/' | url }}" class="md-button md-button--primary">
+          Get Started
+        </a>
+        <a href="{{ 'user-guide/monitoring/' | url }}" class="md-button">
+          Explore Features
+        </a>
+      </div>
+      <div class="tx-hero__image">
+        <img src="{{ 'assets/cylestio_hero.svg' | url }}" alt="Cylestio Hero" width="600" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="md-container">
+  <div class="md-grid md-typeset">
+    <!-- Feature blocks -->
+    <div class="feature-blocks">
+      <div class="feature-block">
+        <div class="feature-block-icon">📊</div>
+        <h3>Real-time Metrics</h3>
+        <p>Track response times, token usage, error rates, and more to understand your AI agent's performance.</p>
+        <a href="{{ 'user-guide/monitoring/' | url }}" class="md-button md-button--primary">Learn More</a>
+      </div>
+      
+      <div class="feature-block">
+        <div class="feature-block-icon">🔍</div>
+        <h3>Detailed Insights</h3>
+        <p>Analyze request patterns, identify bottlenecks, and optimize your AI applications with comprehensive dashboards.</p>
+        <a href="{{ 'user-guide/dashboards/' | url }}" class="md-button md-button--primary">Learn More</a>
+      </div>
+      
+      <div class="feature-block">
+        <div class="feature-block-icon">⚠️</div>
+        <h3>Smart Alerting</h3>
+        <p>Set up alerts for performance degradation, error spikes, or unusual behavior patterns in your AI systems.</p>
+        <a href="{{ 'user-guide/alerts/' | url }}" class="md-button md-button--primary">Learn More</a>
+      </div>
+    </div>
+    
+    <!-- Why Cylestio Section -->
+    <div class="why-section">
+      <h2>Why Choose Cylestio?</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>AI-Focused</h3>
+          <p>Purpose-built for monitoring AI agents with metrics that matter for LLMs and other AI systems.</p>
+        </div>
+        <div class="why-item">
+          <h3>Open Source</h3>
+          <p>Fully open-source with a vibrant community and transparent development process.</p>
+        </div>
+        <div class="why-item">
+          <h3>Secure</h3>
+          <p>Built with security and privacy in mind, with controls for sensitive data handling.</p>
+        </div>
+        <div class="why-item">
+          <h3>Scalable</h3>
+          <p>Designed to scale from small projects to enterprise deployments with millions of requests.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- SDK Section -->
+    <div class="sdk-section">
+      <h2>Available SDKs</h2>
+      <p>Integrate Cylestio into your applications with our language-specific SDKs:</p>
+      <div class="sdk-grid">
+        <a href="{{ 'sdk-reference/python/' | url }}" class="sdk-card">
+          <div class="sdk-icon">🐍</div>
+          <h3>Python</h3>
+          <p>Perfect for data science and ML applications</p>
+        </a>
+        <a href="{{ 'sdk-reference/javascript/' | url }}" class="sdk-card">
+          <div class="sdk-icon">JS</div>
+          <h3>JavaScript</h3>
+          <p>For web and Node.js applications</p>
+        </a>
+        <a href="{{ 'sdk-reference/go/' | url }}" class="sdk-card">
+          <div class="sdk-icon">Go</div>
+          <h3>Go</h3>
+          <p>High-performance backend systems</p>
+        </a>
+        <a href="{{ 'sdk-reference/java/' | url }}" class="sdk-card">
+          <div class="sdk-icon">☕</div>
+          <h3>Java</h3>
+          <p>Enterprise-grade applications</p>
+        </a>
+      </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="cta-section">
+      <h2>Ready to Get Started?</h2>
+      <p>Follow our quick start guide to set up Cylestio in minutes.</p>
+      <a href="{{ 'getting-started/quick-start/' | url }}" class="md-button md-button--primary">
+        Quick Start Guide
+      </a>
+      <a href="{{ 'getting-started/installation/' | url }}" class="md-button">
+        Installation Guide
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Custom styles for the homepage */
+  .tx-container {
+    padding-top: 1rem;
+    background: linear-gradient(to bottom, var(--md-primary-fg-color), var(--md-primary-fg-color--dark));
+    color: var(--md-primary-bg-color);
+  }
+  
+  .tx-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+  }
+  
+  .tx-hero__content {
+    max-width: 600px;
+    margin-right: 1.5rem;
+  }
+  
+  .tx-hero__content h1 {
+    margin-bottom: 1rem;
+    color: currentColor;
+    font-weight: 700;
+  }
+  
+  .tx-hero__content p {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: var(--md-primary-bg-color);
+    opacity: 0.9;
+  }
+  
+  .tx-hero__image {
+    flex-shrink: 0;
+  }
+  
+  .tx-hero__image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .feature-blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+  }
+  
+  .feature-block {
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #fff;
+  }
+  
+  [data-md-color-scheme="slate"] .feature-block {
+    background-color: var(--md-code-bg-color);
+  }
+  
+  .feature-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feature-block-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-block h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  
+  .feature-block p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .why-section, .sdk-section, .cta-section {
+    margin: 4rem 0;
+    text-align: center;
+  }
+  
+  .why-section h2, .sdk-section h2, .cta-section h2 {
+    margin-bottom: 2rem;
+  }
+  
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .why-item {
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+  }
+  
+  [data-md-color-scheme="slate"] .why-item {
+    background-color: var(--md-code-bg-color);
+  }
+  
+  .why-item h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .sdk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .sdk-card {
+    display: block;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+    background-color: #fff;
+  }
+  
+  [data-md-color-scheme="slate"] .sdk-card {
+    background-color: var(--md-code-bg-color);
+  }
+  
+  .sdk-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .sdk-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sdk-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .cta-section {
+    padding: 3rem;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+  }
+  
+  [data-md-color-scheme="slate"] .cta-section {
+    background-color: var(--md-code-bg-color);
+  }
+  
+  .cta-section p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 960px) {
+    .tx-hero {
+      flex-direction: column;
+    }
+    
+    .tx-hero__content {
+      margin-right: 0;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    .tx-hero__image {
+      margin: 0 auto;
+    }
+  }
+</style>
+{% endblock %} 

@@ -1,0 +1,131 @@
+/* Clean, minimal navigation for Cylestio Docs */
+
+/* Reset */
+.md-nav {
+  margin: 0;
+  padding: 0;
+}
+
+/* Fixed sidebar */
+.md-sidebar--primary {
+  position: fixed !important;
+  width: 240px !important;
+  height: 100% !important;
+  overflow-y: auto !important;
+  background: #f8f9fa !important;
+  border-right: 1px solid rgba(0,0,0,0.07) !important;
+  padding-top: 0 !important;
+  margin-top: 96px !important; /* Header + tabs height */
+  z-index: 2 !important;
+}
+
+/* Dark mode sidebar */
+[data-md-color-scheme="slate"] .md-sidebar--primary {
+  background: #1a1b26 !important;
+  border-right-color: rgba(255,255,255,0.07) !important;
+}
+
+/* Main content positioning */
+.md-main__inner {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.md-content {
+  margin-left: 240px !important;
+}
+
+@media screen and (max-width: 76.1875em) {
+  .md-content {
+    margin-left: 0 !important;
+  }
+}
+
+/* Navigation item styling */
+.md-nav__item {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.md-nav__link {
+  margin: 0 !important;
+  padding: 8px 16px !important;
+  display: block !important;
+  color: #424242 !important;
+  font-size: 0.75rem !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  transition: color 0.125s !important;
+  text-decoration: none !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link {
+  color: #e0e0e0 !important;
+}
+
+/* Top-level navigation */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+}
+
+/* Active links */
+.md-nav__link--active,
+.md-nav__link:active {
+  color: var(--md-primary-fg-color) !important;
+  font-weight: 700 !important;
+}
+
+/* Hover state */
+.md-nav__link:hover {
+  color: var(--md-accent-fg-color) !important;
+}
+
+/* Hide navigation titles */
+.md-nav__title {
+  display: none !important;
+}
+
+/* Adjust padding for nested items */
+.md-nav--secondary {
+  padding-left: 12px !important;
+  border-left: 1px solid rgba(0,0,0,0.07) !important;
+  margin-left: 8px !important;
+}
+
+[data-md-color-scheme="slate"] .md-nav--secondary {
+  border-left-color: rgba(255,255,255,0.07) !important;
+}
+
+/* Fix nested navigation display */
+.md-nav__toggle ~ .md-nav {
+  display: none;
+}
+
+.md-nav__toggle:checked ~ .md-nav {
+  display: block;
+}
+
+/* Ensure primary nav is always visible */
+.md-nav--primary,
+.md-nav__list {
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Hide the duplicate item */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child {
+  display: none !important;
+}
+
+/* Fix mobile styles */
+@media screen and (max-width: 76.1875em) {
+  .md-sidebar--primary {
+    transform: translateX(-240px);
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .md-sidebar--primary.md-sidebar--open {
+    transform: translateX(0);
+  }
+} 

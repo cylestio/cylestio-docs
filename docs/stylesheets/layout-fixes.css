@@ -1,0 +1,1088 @@
+/* Minimal layout fixes for Cylestio docs */
+
+/* Base structure */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Header and tabs positioning */
+.md-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  z-index: 4;
+}
+
+.md-tabs {
+  position: fixed;
+  top: 48px;
+  left: 0;
+  right: 0;
+  height: 48px;
+  z-index: 3;
+}
+
+/* Main content area */
+.md-main {
+  margin-top: 96px; /* Header + tabs height */
+  height: calc(100% - 96px);
+}
+
+.md-content__inner {
+  padding: 1.2rem;
+  max-width: 900px; /* Ensure content doesn't get too wide */
+}
+
+/* Simple grid */
+.md-grid {
+  max-width: 100%;
+}
+
+/* Remove duplicate item in nav */
+.md-nav--primary > .md-nav__list > .md-nav__item:first-child {
+  display: none;
+}
+
+/* Enforce sidebar visibility */
+.md-nav--primary {
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 76.1875em) {
+  .md-sidebar--primary {
+    top: 0;
+    height: 100%;
+    padding-top: 48px !important;
+  }
+  
+  .md-tabs {
+    position: static;
+  }
+  
+  .md-main {
+    margin-top: 48px;
+    height: calc(100% - 48px);
+  }
+}
+
+/* Layout improvements for Cylestio documentation */
+
+/* Ensure consistent spacing */
+:root {
+    --cylestio-spacing-unit: 1rem;
+    --cylestio-spacing-xs: calc(var(--cylestio-spacing-unit) * 0.25);
+    --cylestio-spacing-sm: calc(var(--cylestio-spacing-unit) * 0.5);
+    --cylestio-spacing-md: var(--cylestio-spacing-unit);
+    --cylestio-spacing-lg: calc(var(--cylestio-spacing-unit) * 1.5);
+    --cylestio-spacing-xl: calc(var(--cylestio-spacing-unit) * 2);
+    --cylestio-spacing-xxl: calc(var(--cylestio-spacing-unit) * 3);
+}
+
+/* Main content layout improvements */
+.md-main__inner {
+    margin-top: var(--cylestio-spacing-lg);
+    margin-bottom: var(--cylestio-spacing-xxl);
+}
+
+/* Add padding to main content area */
+.md-content {
+    padding: var(--cylestio-spacing-md);
+}
+
+/* Improved code blocks */
+.md-typeset pre {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.md-typeset code {
+    font-family: var(--cylestio-code-font-family, 'JetBrains Mono', monospace);
+    font-size: 0.85rem;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+}
+
+.md-typeset pre code {
+    padding: 0;
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+/* Improved spacing between headings and content */
+.md-typeset h1 + p,
+.md-typeset h2 + p,
+.md-typeset h3 + p {
+    margin-top: 1rem;
+}
+
+.md-typeset h2 {
+    margin-top: 3rem;
+}
+
+.md-typeset h3 {
+    margin-top: 2.5rem;
+}
+
+/* Improved spacing for code blocks near headings */
+.md-typeset h2 + pre,
+.md-typeset h3 + pre {
+    margin-top: 1.5rem;
+}
+
+.md-typeset pre + h2,
+.md-typeset pre + h3 {
+    margin-top: 3rem;
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .md-typeset pre {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-md-color-scheme="slate"] .md-typeset code {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Improve content spacing */
+.md-typeset {
+    line-height: 1.6;
+}
+
+.md-typeset p {
+    margin-bottom: var(--cylestio-spacing-lg);
+    line-height: 1.7;
+}
+
+.md-typeset ul, 
+.md-typeset ol {
+    margin-bottom: var(--cylestio-spacing-lg);
+    padding-left: 1.5em;
+}
+
+.md-typeset li {
+    margin-bottom: 0.5em;
+}
+
+/* Spacing between sections */
+.md-typeset > * {
+    margin-bottom: var(--cylestio-spacing-xl);
+}
+
+/* Improved heading spacing */
+.md-typeset h1 {
+    margin-top: 0.8em;
+    margin-bottom: 1.2em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+
+.md-typeset h2 {
+    margin-top: 1.8em;
+    margin-bottom: 1em;
+    padding-bottom: 0.3em;
+}
+
+.md-typeset h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+/* Improve card layouts */
+.md-typeset .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--cylestio-spacing-lg);
+    margin: var(--cylestio-spacing-xl) 0;
+}
+
+.md-typeset .card {
+    padding: var(--cylestio-spacing-lg);
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.md-typeset .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix image display */
+.md-typeset img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: var(--cylestio-spacing-lg) auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive layouts */
+@media screen and (max-width: 76.1875em) {
+    .md-content {
+        padding: var(--cylestio-spacing-sm);
+    }
+    
+    .md-content__inner {
+        padding-top: var(--cylestio-spacing-md);
+    }
+    
+    .md-typeset .grid {
+        grid-template-columns: 1fr;
+        gap: var(--cylestio-spacing-md);
+    }
+    
+    .md-typeset pre code {
+        padding: 1em;
+    }
+    
+    .md-typeset h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1em;
+    }
+    
+    .md-typeset h2 {
+        font-size: 1.4rem;
+        margin-top: 1.5em;
+    }
+    
+    .md-typeset h3 {
+        font-size: 1.2rem;
+        margin-top: 1.2em;
+    }
+}
+
+/* Fix table overflow issues */
+.md-typeset table {
+    display: table;
+    width: 100%;
+    overflow-x: auto;
+    margin: var(--cylestio-spacing-xl) 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.md-typeset table th {
+    background-color: #f5f7fa;
+    padding: 1em 1.5em;
+    font-weight: 600;
+}
+
+.md-typeset table td {
+    padding: 0.9em 1.5em;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Admonition layout improvements */
+.md-typeset .admonition,
+.md-typeset details {
+    margin: var(--cylestio-spacing-xl) 0;
+    padding: 0 var(--cylestio-spacing-lg);
+    border-left-width: 4px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+    margin: 0 -1rem !important;
+    padding: var(--cylestio-spacing-md) var(--cylestio-spacing-lg) !important;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-weight: 600;
+}
+
+/* Fix spacing in admonitions */
+.md-typeset .admonition > :last-child,
+.md-typeset details > :last-child {
+    margin-bottom: var(--cylestio-spacing-lg);
+}
+
+/* Improved blockquote styling */
+.md-typeset blockquote {
+    padding: var(--cylestio-spacing-md) var(--cylestio-spacing-lg);
+    border-left: 4px solid var(--md-primary-fg-color--light);
+    background-color: rgba(0,0,0,0.02);
+    border-radius: 4px;
+    margin: var(--cylestio-spacing-lg) 0;
+}
+
+/* Fix list spacing inside blockquotes and admonitions */
+.md-typeset blockquote ul,
+.md-typeset blockquote ol,
+.md-typeset .admonition ul,
+.md-typeset .admonition ol {
+    margin-bottom: var(--cylestio-spacing-sm);
+}
+
+/* Fix printing issues */
+@media print {
+    .md-typeset {
+        color: #000;
+    }
+    
+    .md-sidebar,
+    .md-header,
+    .md-footer {
+        display: none;
+    }
+    
+    .md-main__inner {
+        margin: 0;
+        max-width: 100%;
+    }
+    
+    .md-content {
+        padding: 0;
+    }
+}
+
+/* Ensure consistent spacing in lists */
+.md-typeset ul li,
+.md-typeset ol li {
+    margin-bottom: var(--cylestio-spacing-xs);
+}
+
+.md-typeset ul li p,
+.md-typeset ol li p {
+    margin: 0;
+}
+
+/* Fix navigation spacing */
+.md-nav__item {
+    margin: var(--cylestio-spacing-xs) 0;
+}
+
+/* Fix TOC visibility */
+.md-nav--secondary .md-nav__title {
+    font-weight: 700;
+    padding: var(--cylestio-spacing-sm) 0;
+}
+
+/* Improve footer layout */
+.md-footer-nav {
+    padding: var(--cylestio-spacing-md) 0;
+}
+
+.md-footer-nav__direction {
+    font-size: 0.8em;
+}
+
+/* Enhanced content container */
+.cylestio-enhanced-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--cylestio-spacing-md);
+}
+
+.cylestio-enhanced-content .md-content__inner {
+  margin: 0 auto;
+  padding: var(--cylestio-spacing-xl) 0;
+}
+
+/* Improved content readability */
+.cylestio-enhanced-content p {
+  line-height: 1.7;
+  margin-bottom: var(--cylestio-spacing-lg);
+}
+
+/* Make sure code blocks don't overflow on mobile */
+.cylestio-enhanced-content pre {
+  overflow-x: auto;
+  border-radius: 6px;
+  margin: var(--cylestio-spacing-lg) 0;
+}
+
+/* Fix tab containers that might be used */
+.cylestio-enhanced-content .tabbed-set {
+  margin: var(--cylestio-spacing-xl) 0;
+}
+
+.cylestio-enhanced-content .tabbed-content {
+  padding: var(--cylestio-spacing-lg);
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.cylestio-enhanced-content .tabbed-labels {
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+}
+
+/* Responsive design for enhanced content */
+@media screen and (max-width: 76.1875em) {
+  .cylestio-enhanced-content {
+    padding: 0 var(--cylestio-spacing-md);
+  }
+  
+  .cylestio-enhanced-content .md-content__inner {
+    padding: var(--cylestio-spacing-lg) 0;
+  }
+}
+
+@media print {
+  .cylestio-enhanced-content {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+/* Add extra spacing after header for better separation */
+.md-main {
+    padding-top: 0.8rem;
+}
+
+/* Improve spacing in dropdown sections */
+details.md-typeset summary {
+    display: block;
+    padding: 0.8rem 1.2rem !important;
+    font-size: 1.1rem;
+}
+
+details.md-typeset .md-typeset {
+    padding: 0 1.2rem 0.8rem;
+}
+
+/* Improve table of contents spacing */
+.md-nav--secondary {
+    padding-top: 1.5rem;
+}
+
+/* Better spacing for SDK code examples */
+.md-typeset pre + h3,
+.md-typeset pre + h2 {
+    margin-top: 2.5em;
+}
+
+/* Specific styling for Quick Start and SDK pages */
+.quick-start-container h2,
+.sdk-container h2 {
+    margin-top: 2em;
+    padding-top: 0.5em;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    clear: both;
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .md-typeset pre {
+    background-color: #1e2029;
+}
+
+[data-md-color-scheme="slate"] .md-typeset table th {
+    background-color: rgba(255,255,255,0.05);
+}
+
+[data-md-color-scheme="slate"] .md-typeset table td {
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+[data-md-color-scheme="slate"] .md-typeset blockquote {
+    background-color: rgba(255,255,255,0.03);
+}
+
+[data-md-color-scheme="slate"] .md-typeset .card {
+    background-color: rgba(255,255,255,0.03);
+    border-color: rgba(255,255,255,0.05);
+}
+
+/* Homepage specific adjustments */
+.md-content__inner:has(.landing-title) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.landing-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.landing-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  margin: 2rem auto 4rem;
+  max-width: 1200px;
+}
+
+.landing-hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.landing-hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+}
+
+.landing-hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.landing-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.landing-title h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--md-primary-fg-color);
+}
+
+.landing-subtitle {
+  font-size: 1.3rem;
+  text-align: center;
+  color: #555;
+  margin-top: -0.5rem;
+  margin-bottom: 3rem;
+}
+
+.landing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin: 4rem auto;
+  max-width: 1200px;
+}
+
+.landing-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.landing-card-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--md-primary-fg-color);
+}
+
+.landing-card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--md-primary-fg-color);
+}
+
+.cta-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin: 5rem auto 4rem;
+  max-width: 1200px;
+}
+
+.cta-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cta-card h2 {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.cta-card p {
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: white;
+  color: var(--md-primary-fg-color) !important;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Metrics grid improvements */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.metric-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-card h3 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  color: var(--md-primary-fg-color);
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 0.8rem;
+}
+
+.metric-card ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.metric-card li {
+  margin-bottom: 1rem;
+}
+
+.metric-card li strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 960px) {
+  .landing-hero {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .landing-hero-content,
+  .landing-hero-image {
+    max-width: 100%;
+  }
+  
+  .landing-title h1 {
+    font-size: 2.4rem;
+  }
+  
+  .landing-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-container {
+    margin: 3rem auto;
+  }
+  
+  .features-section,
+  .sdk-section {
+    margin: 3rem auto;
+  }
+  
+  .doc-footer {
+    padding: 4rem 1.5rem 2rem;
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .landing-title h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .landing-card,
+[data-md-color-scheme="slate"] .metric-card {
+  background-color: var(--md-code-bg-color);
+}
+
+[data-md-color-scheme="slate"] .metric-card h3 {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .metric-card li strong {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* SDK section on homepage */
+.sdk-section {
+  margin: 5rem auto;
+  max-width: 1200px;
+}
+
+.sdk-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.sdk-section p {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sdk-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.sdk-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  text-decoration: none !important;
+  color: inherit !important;
+  min-width: 140px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.sdk-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sdk-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.sdk-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Features section */
+.features-section {
+  margin: 5rem auto;
+  max-width: 1200px;
+}
+
+.features-section h2 {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.landing-subtitle {
+  font-size: 1.3rem;
+  text-align: center;
+  color: #555;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
+
+.landing-hero-cta {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Homepage responsive adjustments */
+@media screen and (max-width: 960px) {
+  .sdk-buttons {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .sdk-button {
+    padding: 1.2rem;
+    min-width: 120px;
+  }
+  
+  .sdk-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .landing-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sdk-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sdk-button {
+    width: 100%;
+    max-width: 200px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .sdk-icon {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .sdk-button {
+  background-color: var(--md-code-bg-color);
+}
+
+/* Improved homepage hero section */
+.landing-hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  margin: 2rem auto 4rem;
+  max-width: 1200px;
+}
+
+.landing-hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.landing-hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+}
+
+.landing-hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.landing-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.landing-title h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--md-primary-fg-color);
+}
+
+.landing-subtitle {
+  font-size: 1.3rem;
+  text-align: center;
+  color: #555;
+  margin-top: -0.5rem;
+  margin-bottom: 3rem;
+}
+
+/* Improved card layouts and spacing */
+.landing-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin: 4rem auto;
+  max-width: 1200px;
+}
+
+.cta-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin: 5rem auto 4rem;
+  max-width: 1200px;
+}
+
+.features-section {
+  margin: 5rem auto;
+  max-width: 1200px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.sdk-section {
+  margin: 5rem auto;
+  max-width: 1200px;
+}
+
+/* Footer spacing and styling */
+.doc-footer {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  padding: 5rem 2rem 3rem;
+  margin-top: 6rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 3rem;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-column h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-column a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-column a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 3rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments for homepage */
+@media screen and (max-width: 960px) {
+  .landing-hero {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .landing-hero-content,
+  .landing-hero-image {
+    max-width: 100%;
+  }
+  
+  .landing-title h1 {
+    font-size: 2.4rem;
+  }
+  
+  .landing-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-container {
+    margin: 3rem auto;
+  }
+  
+  .features-section,
+  .sdk-section {
+    margin: 3rem auto;
+  }
+  
+  .doc-footer {
+    padding: 4rem 1.5rem 2rem;
+    margin-top: 4rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .landing-title h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Enhanced footer for all pages */
+.md-footer-meta {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 0;
+}
+
+.md-footer-copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.md-footer-social {
+  margin-top: 1rem;
+}
+
+.md-footer-social .md-icon {
+  margin-right: 0.5rem;
+} 

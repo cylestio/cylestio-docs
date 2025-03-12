@@ -1,0 +1,855 @@
+/* Monitoring page specific styles */
+
+/* Main heading */
+.md-typeset h1.monitoring-title {
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  position: relative;
+  padding-bottom: 0.5em;
+}
+
+.md-typeset h1.monitoring-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 4px;
+  background-color: var(--md-primary-fg-color);
+  border-radius: 2px;
+}
+
+/* Section headings */
+.monitoring-section h2 {
+  font-size: 1.8em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: var(--md-primary-fg-color);
+}
+
+.monitoring-section h3 {
+  font-size: 1.4em;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  color: var(--md-primary-fg-color--dark);
+}
+
+/* Lists in monitoring sections */
+.monitoring-section ul,
+.monitoring-section ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.monitoring-section li {
+  margin-bottom: 0.5em;
+}
+
+.monitoring-section li strong {
+  color: var(--md-primary-fg-color);
+}
+
+/* Code blocks */
+.monitoring-code {
+  margin: 1.5em 0;
+  position: relative;
+}
+
+.monitoring-code pre {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+.monitoring-code::before {
+  content: "Python";
+  position: absolute;
+  top: -0.8em;
+  right: 1em;
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  padding: 0.2em 0.8em;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.monitoring-code.bash::before {
+  content: "Bash";
+}
+
+/* Metrics grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5em;
+  margin: 2em 0;
+}
+
+.metric-card {
+  background-color: var(--color-background-light);
+  border-radius: 8px;
+  padding: 1.5em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--color-border);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card h4 {
+  margin-top: 0;
+  margin-bottom: 0.8em;
+  color: var(--md-primary-fg-color);
+  font-size: 1.1em;
+}
+
+.metric-card p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9em;
+}
+
+/* Best practices section */
+.best-practices {
+  background-color: rgba(64, 81, 181, 0.05);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 2em 0;
+  border-left: 4px solid var(--md-primary-fg-color);
+}
+
+.best-practices h3 {
+  margin-top: 0;
+}
+
+/* Troubleshooting section */
+.troubleshooting {
+  background-color: rgba(255, 145, 0, 0.05);
+  border-radius: 8px;
+  padding: 1.5em;
+  margin: 2em 0;
+  border-left: 4px solid #ff9100;
+}
+
+.troubleshooting h2 {
+  color: #ff9100;
+  margin-top: 0;
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .metric-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .best-practices {
+  background-color: rgba(64, 81, 181, 0.1);
+}
+
+[data-md-color-scheme="slate"] .troubleshooting {
+  background-color: rgba(255, 145, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 76.1875em) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .monitoring-section h2 {
+    font-size: 1.6em;
+  }
+  
+  .monitoring-section h3 {
+    font-size: 1.3em;
+  }
+  
+  .md-typeset h1.monitoring-title {
+    font-size: 2em;
+  }
+}
+
+/* Section headers */
+.section-header {
+  color: var(--md-primary-fg-color);
+  border-bottom: 2px solid var(--md-primary-fg-color--light);
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.subsection-header {
+  color: var(--md-primary-fg-color--dark);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Monitoring title */
+.monitoring-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--md-primary-fg-color);
+}
+
+/* Feature summary */
+.feature-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  flex: 1 1 250px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+}
+
+.feature-text {
+  font-weight: 500;
+}
+
+/* Metrics grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.metric-card {
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card h4 {
+  color: var(--md-primary-fg-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.metric-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.metric-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.metric-list li:before {
+  content: "•";
+  color: var(--md-primary-fg-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.metric-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Framework tabs */
+.framework-tabs {
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.framework-tab {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.2s ease;
+}
+
+.framework-tab:last-child {
+  border-bottom: none;
+}
+
+.framework-tab h3 {
+  margin-top: 0;
+  color: var(--md-primary-fg-color);
+  font-size: 1.2rem;
+}
+
+.framework-tab.active-tab {
+  background-color: rgba(0, 0, 0, 0.02);
+  border-left: 3px solid var(--md-primary-fg-color);
+}
+
+/* Copy button styles */
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 1;
+  opacity: 0;
+}
+
+pre:hover .copy-button {
+  opacity: 1;
+}
+
+.copy-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.copy-button:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Active TOC link */
+.md-nav--secondary .md-nav__link.active {
+  color: var(--md-primary-fg-color);
+  font-weight: bold;
+}
+
+/* Dashboard preview */
+.dashboard-preview {
+  margin: 2rem 0;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-preview img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #e0e0e0;
+}
+
+.image-caption {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Best practices */
+.best-practices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.practice-card {
+  background-color: rgba(0, 100, 255, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.practice-card h4 {
+  color: var(--md-primary-fg-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.practice-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.practice-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.practice-list li:before {
+  content: "✓";
+  color: #4caf50;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.practice-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Troubleshooting section */
+.troubleshooting-checklist {
+  background-color: rgba(255, 100, 0, 0.05);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.checklist-item:last-child {
+  margin-bottom: 0;
+}
+
+.checklist-icon {
+  color: #4caf50;
+  font-weight: bold;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.checklist-text {
+  flex: 1;
+}
+
+/* Command line styling */
+.command-line {
+  background-color: #282c34;
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.command-line::before {
+  content: "$";
+  color: #cccccc;
+  margin-right: 0.75rem;
+}
+
+/* Admonition styling */
+.md-typeset .admonition {
+  border-left: 4px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+}
+
+.md-typeset .admonition-title {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 76.1875em) {
+  .monitoring-title {
+    font-size: 2rem;
+  }
+  
+  .metrics-grid,
+  .best-practices-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .feature-summary {
+    flex-direction: column;
+  }
+  
+  .feature-item {
+    flex: 1 1 auto;
+  }
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .metric-card,
+[data-md-color-scheme="slate"] .feature-item {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .practice-card {
+  background-color: rgba(0, 100, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .troubleshooting-checklist {
+  background-color: rgba(255, 100, 0, 0.1);
+}
+
+[data-md-color-scheme="slate"] .dashboard-preview img {
+  border-color: #444;
+}
+
+[data-md-color-scheme="slate"] .image-caption {
+  color: #bbb;
+}
+
+/* Monitoring Page Styles */
+
+.monitoring-header {
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.monitoring-header p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Section styling */
+.monitoring-section {
+  margin: 3rem 0;
+  padding-bottom: 2rem;
+}
+
+.monitoring-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--md-primary-fg-color);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.monitoring-section p {
+  max-width: 800px;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* Feature Card Grid */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--md-primary-fg-color);
+  display: flex;
+  align-items: center;
+}
+
+.feature-icon img,
+.feature-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.feature-title {
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+}
+
+.feature-description {
+  flex-grow: 1;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Metrics grid styling */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.metric-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.8rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 300px;
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--md-primary-fg-color);
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.metric-card ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.metric-card li {
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.metric-card li:last-child {
+  margin-bottom: 0;
+}
+
+.metric-card li strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* Framework tabs styling */
+.framework-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0 1rem;
+}
+
+.framework-tab {
+  padding: 0.6rem 1.2rem;
+  background-color: #f5f7fa;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.framework-tab:hover {
+  background-color: #e9ecef;
+}
+
+.framework-tab.active-tab {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  border-color: var(--md-primary-fg-color);
+}
+
+/* Code block copy button */
+.copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.md-typeset pre:hover .copy-button {
+  opacity: 1;
+}
+
+.copy-button:hover {
+  transform: translateY(-1px);
+  background-color: white;
+}
+
+.copy-button:active {
+  transform: translateY(0);
+}
+
+/* Active link in Table of Contents */
+.md-nav--secondary .md-nav__link--active {
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+}
+
+/* Practice cards for best practices section */
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.practice-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.8rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.practice-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.practice-card h3 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  color: var(--md-primary-fg-color);
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.practice-card p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.practice-card ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.practice-card li {
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+/* Quick setup box */
+.quick-setup {
+  background-color: #e8f4f8;
+  border-left: 4px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.quick-setup h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--md-primary-fg-color);
+  font-size: 1.2rem;
+}
+
+.quick-setup p {
+  margin-bottom: 0.5rem;
+}
+
+.quick-setup code {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.2rem 0.4rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 960px) {
+  .metrics-grid,
+  .feature-grid,
+  .practice-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .metric-card,
+  .feature-card,
+  .practice-card {
+    padding: 1.5rem;
+  }
+  
+  .metric-card {
+    min-height: auto;
+  }
+  
+  .monitoring-section h2 {
+    font-size: 1.6rem;
+  }
+  
+  .feature-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .metric-card,
+[data-md-color-scheme="slate"] .feature-card,
+[data-md-color-scheme="slate"] .practice-card {
+  background-color: var(--md-code-bg-color);
+}
+
+[data-md-color-scheme="slate"] .metric-card h3,
+[data-md-color-scheme="slate"] .practice-card h3 {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .metric-card li strong {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[data-md-color-scheme="slate"] .framework-tab {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .framework-tab:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .quick-setup {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .copy-button {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.1);
+} 

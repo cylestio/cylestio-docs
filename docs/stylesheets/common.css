@@ -1,0 +1,249 @@
+/* Common styles for all Cylestio documentation pages */
+
+:root {
+  /* Main color variables */
+  --cylestio-primary: #3f51b5;
+  --cylestio-primary-light: #757de8;
+  --cylestio-primary-dark: #002984;
+  --cylestio-secondary: #ff9800;
+  --cylestio-secondary-light: #ffc947;
+  --cylestio-secondary-dark: #c66900;
+  
+  /* Neutral colors */
+  --cylestio-gray-50: #fafafa;
+  --cylestio-gray-100: #f5f5f5;
+  --cylestio-gray-200: #eeeeee;
+  --cylestio-gray-300: #e0e0e0;
+  --cylestio-gray-400: #bdbdbd;
+  --cylestio-gray-500: #9e9e9e;
+  --cylestio-gray-600: #757575;
+  --cylestio-gray-700: #616161;
+  --cylestio-gray-800: #424242;
+  --cylestio-gray-900: #212121;
+  
+  /* Spacing variables */
+  --cylestio-spacing-xs: 0.25rem;
+  --cylestio-spacing-sm: 0.5rem;
+  --cylestio-spacing-md: 1rem;
+  --cylestio-spacing-lg: 1.5rem;
+  --cylestio-spacing-xl: 2rem;
+  --cylestio-spacing-xxl: 3rem;
+  
+  /* Border variables */
+  --cylestio-border-radius-sm: 4px;
+  --cylestio-border-radius-md: 8px;
+  --cylestio-border-radius-lg: 12px;
+  
+  /* Shadow variables */
+  --cylestio-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --cylestio-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --cylestio-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Common layout fixes */
+.cylestio-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cylestio-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.cylestio-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cylestio-justify-between {
+  justify-content: space-between;
+}
+
+.cylestio-justify-center {
+  justify-content: center;
+}
+
+.cylestio-align-center {
+  align-items: center;
+}
+
+.cylestio-gap-sm {
+  gap: var(--cylestio-spacing-sm);
+}
+
+.cylestio-gap-md {
+  gap: var(--cylestio-spacing-md);
+}
+
+.cylestio-gap-lg {
+  gap: var(--cylestio-spacing-lg);
+}
+
+/* Text utilities */
+.cylestio-text-center {
+  text-align: center;
+}
+
+.cylestio-text-left {
+  text-align: left;
+}
+
+.cylestio-text-right {
+  text-align: right;
+}
+
+.cylestio-text-bold {
+  font-weight: 600;
+}
+
+.cylestio-text-sm {
+  font-size: 0.875rem;
+}
+
+.cylestio-text-md {
+  font-size: 1rem;
+}
+
+.cylestio-text-lg {
+  font-size: 1.25rem;
+}
+
+.cylestio-text-xl {
+  font-size: 1.5rem;
+}
+
+.cylestio-text-muted {
+  color: var(--cylestio-gray-600);
+}
+
+/* Spacing utilities */
+.cylestio-mt-sm { margin-top: var(--cylestio-spacing-sm); }
+.cylestio-mt-md { margin-top: var(--cylestio-spacing-md); }
+.cylestio-mt-lg { margin-top: var(--cylestio-spacing-lg); }
+.cylestio-mt-xl { margin-top: var(--cylestio-spacing-xl); }
+
+.cylestio-mb-sm { margin-bottom: var(--cylestio-spacing-sm); }
+.cylestio-mb-md { margin-bottom: var(--cylestio-spacing-md); }
+.cylestio-mb-lg { margin-bottom: var(--cylestio-spacing-lg); }
+.cylestio-mb-xl { margin-bottom: var(--cylestio-spacing-xl); }
+
+.cylestio-mx-auto { 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cylestio-my-sm { 
+  margin-top: var(--cylestio-spacing-sm);
+  margin-bottom: var(--cylestio-spacing-sm);
+}
+
+.cylestio-my-md { 
+  margin-top: var(--cylestio-spacing-md);
+  margin-bottom: var(--cylestio-spacing-md);
+}
+
+.cylestio-my-lg { 
+  margin-top: var(--cylestio-spacing-lg);
+  margin-bottom: var(--cylestio-spacing-lg);
+}
+
+.cylestio-p-sm { padding: var(--cylestio-spacing-sm); }
+.cylestio-p-md { padding: var(--cylestio-spacing-md); }
+.cylestio-p-lg { padding: var(--cylestio-spacing-lg); }
+.cylestio-p-xl { padding: var(--cylestio-spacing-xl); }
+
+/* Common component styles */
+.cylestio-card {
+  background-color: white;
+  border-radius: var(--cylestio-border-radius-md);
+  box-shadow: var(--cylestio-shadow-md);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cylestio-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--cylestio-shadow-lg);
+}
+
+.cylestio-card-header {
+  padding: var(--cylestio-spacing-md);
+  border-bottom: 1px solid var(--cylestio-gray-200);
+}
+
+.cylestio-card-body {
+  padding: var(--cylestio-spacing-md);
+}
+
+.cylestio-card-footer {
+  padding: var(--cylestio-spacing-md);
+  border-top: 1px solid var(--cylestio-gray-200);
+}
+
+.cylestio-button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: var(--cylestio-border-radius-sm);
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+}
+
+.cylestio-button-primary {
+  background-color: var(--cylestio-primary);
+  color: white !important;
+}
+
+.cylestio-button-primary:hover {
+  background-color: var(--cylestio-primary-light);
+  transform: translateY(-1px);
+}
+
+.cylestio-button-secondary {
+  background-color: var(--cylestio-secondary);
+  color: white !important;
+}
+
+.cylestio-button-secondary:hover {
+  background-color: var(--cylestio-secondary-light);
+  transform: translateY(-1px);
+}
+
+.cylestio-button-outline {
+  border: 1px solid var(--cylestio-primary);
+  color: var(--cylestio-primary) !important;
+  background-color: transparent;
+}
+
+.cylestio-button-outline:hover {
+  background-color: rgba(63, 81, 181, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Dark theme adjustments */
+[data-md-color-scheme="slate"] .cylestio-card {
+  background-color: var(--md-code-bg-color);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .cylestio-card-header,
+[data-md-color-scheme="slate"] .cylestio-card-footer {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .cylestio-button-outline {
+  border-color: var(--cylestio-primary-light);
+  color: var(--cylestio-primary-light) !important;
+}
+
+[data-md-color-scheme="slate"] .cylestio-button-outline:hover {
+  background-color: rgba(117, 125, 232, 0.1);
+}
+
+[data-md-color-scheme="slate"] .cylestio-text-muted {
+  color: var(--cylestio-gray-400);
+} 

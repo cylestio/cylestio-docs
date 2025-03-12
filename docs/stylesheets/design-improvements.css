@@ -1,0 +1,283 @@
+/* Cylestio Documentation Design Improvements */
+
+/* Step 1: Homepage Hero & Layout */
+.landing-title {
+  text-align: center;
+  margin: 2rem auto 3rem;
+  max-width: 800px;
+}
+
+.landing-title h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--md-primary-fg-color);
+}
+
+.landing-subtitle {
+  font-size: 1.2rem;
+  color: var(--cylestio-muted-color);
+  margin-bottom: 2rem;
+}
+
+.landing-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem 0;
+  gap: 3rem;
+}
+
+.landing-hero-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.landing-hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.landing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.landing-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.landing-card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.landing-card-title {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--md-primary-fg-color);
+}
+
+.cta-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 4rem 0;
+}
+
+.cta-card {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.cta-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: white;
+  border-bottom: none;
+}
+
+.cta-card p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: white;
+  color: var(--md-primary-fg-color);
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: auto;
+  transition: background-color 0.2s, transform 0.2s;
+  align-self: flex-start;
+}
+
+.cta-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Step 2: Navigation & Sidebar */
+.md-sidebar--primary {
+  width: 13rem;
+}
+
+.md-nav__item .md-nav {
+  margin-left: 1rem;
+}
+
+.md-nav__item .md-nav .md-nav {
+  margin-left: 0.75rem;
+}
+
+.md-nav__link {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8rem;
+}
+
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+/* Step 3: Code Blocks & Sections */
+.md-typeset pre {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.md-typeset code {
+  font-family: var(--cylestio-code-font-family);
+  font-size: 0.85rem;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.md-typeset pre code {
+  padding: 0;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+/* Step 4: Typography & Color Consistency */
+.md-typeset h1 {
+  font-size: 2.4rem;
+  color: var(--md-primary-fg-color);
+  margin-bottom: 1.5rem;
+}
+
+.md-typeset h2 {
+  font-size: 1.8rem;
+  color: var(--md-primary-fg-color--dark);
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+}
+
+.md-typeset h3 {
+  font-size: 1.35rem;
+  color: var(--md-primary-fg-color--dark);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Step 5: Responsive Testing */
+@media screen and (max-width: 960px) {
+  .landing-hero {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .landing-hero-content,
+  .landing-hero-image {
+    max-width: 100%;
+  }
+  
+  .landing-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .cta-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .landing-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .landing-title h1 {
+    font-size: 2.2rem;
+  }
+  
+  .md-sidebar--primary {
+    width: 16rem;
+  }
+}
+
+/* Step 6: Footer & Final Polish */
+.md-footer-meta {
+  padding: 3rem 0 2rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-column h3 {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-column a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-column a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .landing-card {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .md-typeset pre {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-md-color-scheme="slate"] .md-typeset code {
+  background-color: rgba(0, 0, 0, 0.2);
+} 

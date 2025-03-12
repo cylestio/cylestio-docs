@@ -1,0 +1,322 @@
+/* SDK Reference page styling */
+
+/* SDK Navigation Bar */
+.sdk-navbar {
+  display: flex;
+  margin: 1.5rem 0 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sdk-nav-link {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  color: #555 !important;
+  text-decoration: none !important;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.sdk-nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #333 !important;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+
+.sdk-nav-link.active {
+  font-weight: 600;
+  color: var(--md-primary-fg-color) !important;
+  border-bottom-color: var(--md-primary-fg-color);
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+/* SDK Section styling */
+.sdk-section {
+  margin: 2.5rem 0;
+  padding-bottom: 2rem;
+}
+
+.sdk-section:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.sdk-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  color: var(--md-primary-fg-color);
+}
+
+.sdk-section h3 {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.sdk-section p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  max-width: 46em; /* For better readability */
+}
+
+/* Code blocks styling */
+.code-label-wrapper {
+  position: relative;
+  margin: 1.5rem 0;
+}
+
+.code-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #666;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.75rem;
+  border-radius: 0 6px 0 6px;
+  font-family: var(--cylestio-code-font-family);
+  z-index: 1;
+}
+
+.sdk-copy-btn {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1;
+  opacity: 0;
+}
+
+.sdk-copy-btn svg {
+  margin-right: 0.3rem;
+  width: 16px;
+  height: 16px;
+}
+
+.code-label-wrapper:hover .sdk-copy-btn {
+  opacity: 1;
+}
+
+.sdk-copy-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced code blocks */
+.sdk-container pre {
+  margin: 1.5rem 0;
+  padding: 0;
+  position: relative;
+  border-radius: 6px;
+  background-color: #f8f9fb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.sdk-container pre code {
+  display: block;
+  padding: 1.2rem;
+  overflow-x: auto;
+  line-height: 1.6;
+  font-size: 0.85rem;
+  tab-size: 2;
+}
+
+/* Parameter tables styling */
+.sdk-container table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.sdk-container table th {
+  background-color: #f5f7fa;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sdk-container table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  vertical-align: top;
+}
+
+.sdk-container table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Parameter name column */
+.sdk-container table td:first-child code {
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.03);
+  color: var(--md-primary-fg-color);
+}
+
+/* Type column */
+.sdk-container table td:nth-child(2) {
+  color: #666;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Highlight active SDK in sidebar */
+.sdk-active-link {
+  color: var(--md-primary-fg-color) !important;
+  font-weight: 600 !important;
+  background-color: rgba(64, 81, 181, 0.06) !important;
+}
+
+/* Example section styling */
+.sdk-section .example-heading {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #444;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.sdk-section .example-description {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Method signature display */
+.method-signature {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-left: 4px solid var(--md-primary-fg-color);
+  border-radius: 4px;
+  font-family: var(--cylestio-code-font-family);
+  font-size: 0.85rem;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.method-name {
+  font-weight: 700;
+  color: var(--md-primary-fg-color);
+}
+
+.parameter-name {
+  color: #6c6c6c;
+}
+
+.parameter-type {
+  color: #005cc5;
+  font-style: italic;
+}
+
+/* Response section styling */
+.response-heading {
+  margin-top: 1.5rem;
+  color: #444;
+  font-weight: 600;
+}
+
+/* Dark mode adjustments */
+[data-md-color-scheme="slate"] .sdk-navbar {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .sdk-nav-link {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+[data-md-color-scheme="slate"] .sdk-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.9) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-md-color-scheme="slate"] .sdk-section:not(:last-child) {
+  border-bottom-color: rgba(255, 255, 255, 0.07);
+}
+
+[data-md-color-scheme="slate"] .code-label {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+[data-md-color-scheme="slate"] .sdk-copy-btn {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .sdk-copy-btn:hover {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+[data-md-color-scheme="slate"] .sdk-container pre {
+  background-color: #1e222a;
+}
+
+[data-md-color-scheme="slate"] .sdk-container table th {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-md-color-scheme="slate"] .sdk-container table td {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .method-signature {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 76.1875em) {
+  .sdk-navbar {
+    margin: 1rem 0 1.5rem;
+    padding-bottom: 0.3rem;
+  }
+  
+  .sdk-nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .sdk-section h2 {
+    font-size: 1.5rem;
+  }
+  
+  .sdk-section h3 {
+    font-size: 1.2rem;
+  }
+  
+  .sdk-container pre code {
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+  
+  .code-label {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .sdk-copy-btn {
+    padding: 0.25rem 0.6rem;
+    font-size: 0.7rem;
+    opacity: 1; /* Always visible on mobile */
+  }
+} 
