@@ -55,4 +55,17 @@ Once you have Cylestio installed and configured, you can:
 - Explore the [User Guide](../user-guide/index.md) to learn about all features
 - Check out the [API Reference](../api-reference/index.md) for detailed API documentation
 - Learn about [Security & Compliance](../security/index.md) features
-- Dive into [Advanced Topics](../advanced-topics/index.md) for more complex use cases 
+- Dive into [Advanced Topics](../advanced-topics/index.md) for more complex use cases
+
+<div class="cta-section">
+  <h2>Ready to Get Started?</h2>
+  <p>Follow our quick start guide to set up Cylestio in minutes.</p>
+  <div class="cta-buttons">
+    <a href="../getting-started/quick-start/" class="md-button md-button--primary">
+      Quick Start Guide
+    </a>
+    <a href="../getting-started/installation/" class="md-button">
+      Installation Guide
+    </a>
+  </div>
+</div> 

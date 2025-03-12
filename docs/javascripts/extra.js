@@ -5,40 +5,16 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   // Initialize any interactive elements
-  initializeFeatureBlocks();
   enhanceCodeBlocks();
   setupScrollEffects();
   setupMobileNavigation();
+  initializeFeatureCards();
 });
-
-/**
- * Initialize feature blocks with hover effects and animations
- */
-function initializeFeatureBlocks() {
-  const featureBlocks = document.querySelectorAll('.feature-block');
-  
-  if (featureBlocks.length) {
-    featureBlocks.forEach((block, index) => {
-      // Add a slight delay to each block for a staggered animation
-      block.style.animationDelay = `${index * 0.1}s`;
-      
-      // Add click handler if the block has a link
-      const link = block.querySelector('a');
-      if (link) {
-        block.addEventListener('click', function() {
-          link.click();
-        });
-        block.style.cursor = 'pointer';
-      }
-    });
-  }
-}
 
 /**
  * Enhance code blocks with copy button and syntax highlighting
  */
 function enhanceCodeBlocks() {
-  // This is mostly handled by MkDocs Material, but we can add extra functionality
   const codeBlocks = document.querySelectorAll('pre code');
   
   if (codeBlocks.length) {
@@ -141,6 +117,29 @@ function setupMobileNavigation() {
           }
           parent = parent.parentNode.closest('.md-nav__item--nested');
         }
+      }
+    });
+  }
+}
+
+/**
+ * Initialize feature cards with hover effects
+ */
+function initializeFeatureCards() {
+  const featureCards = document.querySelectorAll('.feature-card');
+  
+  if (featureCards.length) {
+    featureCards.forEach((card, index) => {
+      // Add a slight delay to each card for a staggered animation
+      card.style.animationDelay = `${index * 0.1}s`;
+      
+      // Add click handler if the card has a link
+      const link = card.querySelector('a');
+      if (link) {
+        card.addEventListener('click', function() {
+          link.click();
+        });
+        card.style.cursor = 'pointer';
       }
     });
   }
